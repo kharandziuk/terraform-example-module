@@ -1,7 +1,7 @@
 provider "aws" {
   region = "us-west-2"
-  shared_credentials_file = "/Users/kharandziuk/.aws/creds"
-  profile                 = "prototyper"
+  access_key = var.access_key
+  secret_key = var.secret_key
 }
 
 resource "aws_instance" "example" {
@@ -23,4 +23,3 @@ data "aws_instances" "test" {
     "aws_instance.example"
   ]
 }
-
